@@ -11,6 +11,9 @@ jobs:
         uses: r-lib/actions/setup-r@v1
         with:
           r-version: 4.2.0
+      - name: install-dependencies
+        run: |
+          Rscript -e 'install.packages("rmarkdown")'
       - name: simple-knit
         run: |
           Rscript -e 'rmarkdown::render("minimal_example.Rmd", params = list(some_number = 1))'
