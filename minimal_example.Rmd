@@ -1,0 +1,8 @@
+---
+title: "Minimal Example"
+output: html_document
+params:
+  some_number: NULL
+---
+
+You supplied some_number: `r params$some_number`
