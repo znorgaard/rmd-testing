@@ -13,7 +13,7 @@ jobs:
           r-version: 4.2.0
       - name: install-dependencies
         run: |
-          sudo pate-get update -y
+          sudo apt-get update -y
           sudo apt-get install -y pandoc
           Rscript -e 'install.packages("rmarkdown")'
       - name: simple-knit
