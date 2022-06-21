@@ -1,0 +1,11 @@
+name: 'Test minimal_example.Rmd'
+description: 'Run tests for minimal_example.Rmd'
+runs:
+  using: "composite"
+  steps:
+    - id: knit-testing
+      run: |
+        Rscript -e 'rmarkdown::render("minimal_example.Rmd", params = list(some_value = 1), output_file = "minimal_numeric_1.html")'
+        Rscript -e 'rmarkdown::render("minimal_example.Rmd", params = list(some_value = "1"), output_file = "minimal_character_1.html")'
+        Rscript -e 'rmarkdown::render("minimal_example.Rmd", output_file = "minimal_null.html")'
+      shell: bash
