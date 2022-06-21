@@ -1,8 +1,25 @@
 ---
 title: "Minimal Example"
-output: html_document
+output:
+  flexdashboard::flex_dashboard:
+    orientation: rows
 params:
-  some_number: NULL
+  some_value: NULL
 ---
 
-You supplied some_number: `r params$some_number`
+```{r setup}
+library(flexdashboard)
+some_value <- params$some_value
+```
+
+### Argument Type
+
+```{r argument-type}
+valueBox(class(some_value), icon = "ion-crop")
+```
+
+### Argument Value
+
+```{r argument-value}
+valueBox(some_value, icon = "ion-alert")
+```

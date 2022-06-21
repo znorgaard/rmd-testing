@@ -18,7 +18,7 @@ jobs:
           Rscript -e 'install.packages("rmarkdown")'
       - name: simple-knit
         run: |
-          Rscript -e 'rmarkdown::render("minimal_example.Rmd", params = list(some_number = 1))'
+          Rscript -e 'rmarkdown::render("minimal_example.Rmd", params = list(some_value = 1))'
       - name: upload-outputs
         uses: actions/upload-artifact@v3
         with:
