@@ -16,8 +16,8 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install -y pandoc
           Rscript -e 'install.packages(c("rmarkdown", "flexdashboard"))'
-      - name: simple-knit
-        uses: test-minimal-rmd
+      - name: simple-knit-tests
+        uses: ./.github/actions/test-minimal-rmd
       - name: upload-outputs
         uses: actions/upload-artifact@v3
         with:
