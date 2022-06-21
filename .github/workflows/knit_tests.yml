@@ -11,11 +11,17 @@ jobs:
         uses: r-lib/actions/setup-r@v1
         with:
           r-version: 4.2.0
-      - name: install-dependencies
+      - name: install-r-dependencies
         run: |
           sudo apt-get update -y
           sudo apt-get install -y pandoc
           Rscript -e 'install.packages(c("rmarkdown", "flexdashboard"))'
+      - name: install-poetry
+        uses: abatilo/actions-poetry@v2.0.0
+        with:
+          poetry-version: 1.1.11
+      - name: install-python-dependencies
+        run: poetry install
       - name: simple-knit-tests
         uses: ./.github/actions/test-minimal-rmd
       - name: upload-outputs
