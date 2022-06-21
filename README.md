@@ -1,3 +1,5 @@
+[![Knit Tests](https://github.com/znorgaard/rmd-testing/actions/workflows/knit_tests.yml/badge.svg)](https://github.com/znorgaard/rmd-testing/actions/workflows/knit_tests.yml)
+
 ## Overview
 
 This repository is intended to be a simple example of how to automate testing rmarkdown report generation for a variety of inputs.
