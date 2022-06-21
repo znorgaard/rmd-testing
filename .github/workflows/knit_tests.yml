@@ -15,10 +15,12 @@ jobs:
         run: |
           sudo apt-get update -y
           sudo apt-get install -y pandoc
-          Rscript -e 'install.packages("rmarkdown")'
+          Rscript -e 'install.packages(c("rmarkdown", "flexdashboard"))'
       - name: simple-knit
         run: |
-          Rscript -e 'rmarkdown::render("minimal_example.Rmd", params = list(some_number = 1))'
+          Rscript -e 'rmarkdown::render("minimal_example.Rmd", params = list(some_value = 1), output_file = "minimal_numeric_1.html")'
+          Rscript -e 'rmarkdown::render("minimal_example.Rmd", params = list(some_value = "1"), output_file = "minimal_character_1.html")'
+          Rscript -e 'rmarkdown::render("minimal_example.Rmd", output_file = "minimal_null.html")'
       - name: upload-outputs
         uses: actions/upload-artifact@v3
         with:
