@@ -1,3 +1,4 @@
-minimal_example.html
+*.html
 .idea/*
 .Rhistory
+poetry.lock
